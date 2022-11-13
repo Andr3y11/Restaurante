@@ -1,0 +1,15 @@
+body, html {
+    height: 100%;
+    font-family: "Inconsolata", sans-serif;
+  }
+  
+  .bgimg {
+    background-position:left;
+    background-size: contain;
+    margin: 0mm;
+    opacity: 0.3;
+  }
+  
+  .menu {
+    display: none;
+  }
