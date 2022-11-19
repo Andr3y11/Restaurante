@@ -4,10 +4,11 @@
       <a href="#!" class="brand-logo">RESTAURANT B45</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="administracion/buscar-restaurante">Restaurantes</a></li>
-        <li><a href="administracion/buscar-facturas">Facturas</a></li>
-        <li><a href="administracion/buscar-producto">Productos</a></li>
-        <li><a href="autenticacion/login">log in</a></li>
+        <li *ngIf="SeinicioSesion"><a href="administracion/buscar-restaurante">Restaurantes</a></li>
+        <li *ngIf="SeinicioSesion"><a href="administracion/buscar-facturas">Facturas</a></li>
+        <li *ngIf="SeinicioSesion"><a href="administracion/listar-cliente">Clientes</a></li>
+        <li ><a href="autenticacion/login">log in</a></li>
+        <li *ngIf="SeinicioSesion"><a href="autenticacion/cerrarsesion">Cerrar sesion</a></li>
       </ul>
     </div>
   </nav>

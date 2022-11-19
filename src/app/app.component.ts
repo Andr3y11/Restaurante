@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+ 
 import { AppComponent } from "./AppComponent";
 import { EditarClienteComponent } from './modulos/administracion/clientes/editar-cliente/editar-cliente.component';
 import { CrearClienteComponent } from './modulos/administracion/clientes/crear-cliente/crear-cliente.component';
@@ -22,9 +22,9 @@ import {HttpClientModule} from '@angular/common/http';
     EliminarClienteComponent,
     BuscarClienteComponent,
     PlantillaComponent,
-    PiePaginaComponent,
-    EncabezadoComponent,
-    InicioComponent,
+    //PiePaginaComponent,
+    //EncabezadoComponent,
+    //InicioComponent,
     ErrorComponent
   ],
   imports: [

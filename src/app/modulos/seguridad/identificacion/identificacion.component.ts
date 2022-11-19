@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 var CryptoJS=require("crypto-js");
 
@@ -15,7 +16,8 @@ export class IdentificacionComponent implements OnInit {
     'password':['',[Validators.required,]]
   })
   constructor(private fb:FormBuilder,
-    private servicioAutenticacion:AutenticacionService ) { }
+    private servicioAutenticacion:AutenticacionService,
+    private router:Router ) { }
 
   ngOnInit(): void {
   }
@@ -26,8 +28,12 @@ export class IdentificacionComponent implements OnInit {
     let CypherPassword =CryptoJS.MD5(password);
     this.servicioAutenticacion.login(usuario,CypherPassword).subscribe(
       (datos:any)=>{
+        this.servicioAutenticacion.AlmacenarSesion(datos);
+        alert("Datos correctos")
         console.log("La informacion se guardo de forma correcta");
+        this.router.navigate(["/home"]);
       },(error:any)=>{
+        alert("Datos incorrectos")
         console.log("Los datos enviados son invalidos");
       })
   }

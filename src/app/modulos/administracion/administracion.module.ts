@@ -18,6 +18,7 @@ import { BuscarRestauranteComponent } from './Restaurante/buscar-restaurante/bus
 import { CrearRestauranteComponent } from './Restaurante/crear-restaurante/crear-restaurante.component';
 import { EditarRestauranteComponent } from './Restaurante/editar-restaurante/editar-restaurante.component';
 import { EliminarRestauranteComponent } from './Restaurante/eliminar-restaurante/eliminar-restaurante.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,7 +42,9 @@ import { EliminarRestauranteComponent } from './Restaurante/eliminar-restaurante
   ],
   imports: [
     CommonModule,
-    AdministracionRoutingModule
+    AdministracionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministracionModule { }
