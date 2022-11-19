@@ -31,7 +31,7 @@ const routes: Routes = [
     component:EliminarClienteComponent
   },
   {
-    path:'actualizar-cliente/:id',
+    path:'actualizar-cliente/:Id',
     component:EditarClienteComponent
   },
   {

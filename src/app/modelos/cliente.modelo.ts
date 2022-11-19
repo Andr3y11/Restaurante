@@ -1,5 +1,5 @@
 export class ModeloCliente{
-    id?:string;
+    Id?:string;
     Nombre?:string;
     Cedula?:string;
     correo?:string;

@@ -14,6 +14,7 @@ listadoRegistros:ModeloCliente[]=[];
   constructor(private clienteservicio:ClienteService) { }
 
   ngOnInit(): void {
+    this.ObtenerListadoClientes();
   }
 
   ObtenerListadoClientes(){

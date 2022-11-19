@@ -1,22 +1,22 @@
-<div class=""row>
+<div class="row">
     <h3 class="center-align">Crear Cliente</h3>
     <article class="col 56 offset-s3">
-        <form method="POST" action="formulario-contacto.php">
+        <form [formGroup]="fgValidador" (ngSubmit)="GuardarCliente()" action="formulario-contacto.php">
            <div class="input-field">
                 <label for="Nombre">Nombre</label>
-                <input type="text" name="nombre" required>
+                <input formControlName="Nombre" type="text" name="nombre" required>
            </div> 
            <div class="input-field">
                  <label for="Cedula">Cedula</label>
-                 <input type="text" name="Cedula" required>
+                 <input formControlName="Cedula" type="text" name="Cedula" required>
             </div> 
             <div class="input-field">
                 <label for="correo">Correo</label>
-                <input type="text" name="correo" required>
+                <input formControlName="correo" type="text" name="correo" required>
             </div>
             
             <p class="center-align">
-               <button class="waves.effect waves-light btn"  type="submit"><i
+               <button [disabled]= "!fgValidador.valid"  class="waves.effect waves-light btn"  type="submit"><i
                        class="material-icons right">send></i>Enviar</button>     
             </p>
 

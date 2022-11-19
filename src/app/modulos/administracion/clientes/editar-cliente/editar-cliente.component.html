@@ -1,1 +1,37 @@
-<p>editar-cliente works!</p>
+<div class="row">
+    <h3 class="center-align">Crear Cliente</h3>
+    <article class="col 56 offset-s3">
+        <form [formGroup]="fgValidador" (ngSubmit)="EditarCliente()" action="formulario-contacto.php">
+            <input type="hidden" formControlName="Id"/>
+            <div class="input-field">
+                <label for="Nombre" class="active">Nombre</label>
+                <input formControlName="Nombre" type="text" name="Nombre" required>
+           </div> 
+           <div class="input-field">
+                 <label for="Cedula" class="active">Cedula</label>
+                 <input formControlName="Cedula" type="text" name="Cedula" required>
+            </div> 
+            <div class="input-field">
+                <label for="correo" class="active">Correo</label>
+                <input formControlName="correo" type="text" name="correo" required>
+            </div>
+            
+            <p class="center-align">
+               <button [disabled]= "!fgValidador.valid"  class="waves.effect waves-light btn"  type="submit"><i
+                       class="material-icons right">send></i>Enviar</button>     
+            </p>
+
+
+        </form>
+
+
+
+
+    </article>
+
+
+
+
+
+
+</div>

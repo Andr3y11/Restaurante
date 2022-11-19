@@ -20,6 +20,11 @@ export class ClienteService {
    
   }
 
+  ObtenerRegistrosPorId(Id:string):Observable<ModeloCliente>{
+    return this.http.get<ModeloCliente>(`http://localhost:3000/clientes/${Id}`);
+   
+  }
+
   CrearCliente(cliente:ModeloCliente):Observable<ModeloCliente>{
     return this.http.post<ModeloCliente>("http://localhost:3000/clientes",cliente,{
       headers: new HttpHeaders({
@@ -30,7 +35,7 @@ export class ClienteService {
   }
 
   ActualizarCliente(cliente:ModeloCliente):Observable<ModeloCliente>{
-    return this.http.put<ModeloCliente>("http://localhost:3000/clientes",cliente,{
+    return this.http.put<ModeloCliente>(`http://localhost:3000/clientes/${cliente.Id}`,cliente,{
       headers: new HttpHeaders({
         'Autorization':`Bearer ${this.token}`
       })
@@ -38,8 +43,8 @@ export class ClienteService {
    
   }
 
-  EliminarCliente(id:string):Observable<any>{
-    return this.http.delete(`http://localhost:3000/clientes/${id}`,{
+  EliminarCliente(Id:string):Observable<any>{
+    return this.http.delete(`http://localhost:3000/clientes/${Id}`,{
       headers: new HttpHeaders({
         'Autorization':`Bearer ${this.token}`
       })
